@@ -1,4 +1,57 @@
+# Main directive for all search engines
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Disallow: /500
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*?*
+Disallow: /*/preview
 
+# Specific directive for GPTBot
+User-agent: GPTBot
+Allow: /blog/
+Allow: /products/
+Allow: /about/
+Allow: /faq/
+Disallow: /
+
+# Specific directive for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific directive for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Specific directive for Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Block AI scraping services except on educational content
+User-agent: ChatGPT-User
+Disallow: /
+Allow: /blog/
+Allow: /faq/
+
+# Block archive.org on certain pages
+User-agent: archive.org_bot
+Disallow: /private/
+Disallow: /beta/
+
+# Block image indexing bots from private sections
+User-agent: Googlebot-Image
+Disallow: /private/
+Disallow: /admin/
+
+# Main Sitemap
 Sitemap: https://flashcryptosenders.com/sitemap.xml
+# News Sitemap (if applicable)
+Sitemap: https://flashcryptosenders.com/news-sitemap.xml
+# Image Sitemap (if applicable)
+Sitemap: https://flashcryptosenders.com/image-sitemap.xml

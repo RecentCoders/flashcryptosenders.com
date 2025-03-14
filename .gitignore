@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
 
 # next.js
 /.next/
@@ -9,6 +12,8 @@
 
 # production
 /build
+/dist
+/.output
 
 # debug
 npm-debug.log*
@@ -18,6 +23,7 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -25,3 +31,59 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# testing
+/coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/
+*.spec.js.snap
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# logs
+logs
+*.log
+log.txt
+
+# cache
+.eslintcache
+.stylelintcache
+.cache
+.parcel-cache
+.npm
+.temp
+.tmp
+.turbo
+
+# local netlify folder
+.netlify
+
+# Render
+.render-buildpacks
+
+# Lighthouse reports
+/lighthouse-reports/
+*.report.html
+
+# Bundle analyzer output
+/analyze/
+
+# Storybook
+/storybook-static/
