@@ -50,6 +50,13 @@ const nextConfig = {
   },
   generateBuildId: async () => {
     return 'build-' + Date.now()
+  },
+  // Add this to fix metadata warnings
+  generateViewport: async () => {
+    return {
+      viewport: 'width=device-width, initial-scale=1',
+      themeColor: '#ffffff',
+    }
   }
 };
 
