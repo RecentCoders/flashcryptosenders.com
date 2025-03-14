@@ -11,5 +11,9 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "env": {
+    "EDGEDB_INSTANCE": "flashcryptosenders",
+    "EDGEDB_SECRET_KEY": "{{EDGEDB_SECRET_KEY}}"
+  }
 }

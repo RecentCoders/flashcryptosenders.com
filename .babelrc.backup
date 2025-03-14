@@ -1,0 +1,16 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "babel-plugin-transform-remove-console",
+      { "exclude": ["error", "warn"] }
+    ],
+    ["babel-plugin-transform-react-remove-prop-types", { "removeImport": true }],
+    ["@babel/plugin-transform-react-jsx", { "runtime": "automatic" }]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-refresh/babel"]
+    }
+  }
+}
