@@ -49,6 +49,12 @@ const nextConfig = {
   },
   generateBuildId: async () => {
     return 'build-' + Date.now()
+  },
+  generateViewport: async () => {
+    return {
+      viewport: 'width=device-width, initial-scale=1',
+      themeColor: '#ffffff',
+    }
   }
 };
 
