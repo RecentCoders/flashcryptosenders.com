@@ -3,21 +3,7 @@
   "plugins": [
     [
       "babel-plugin-transform-remove-console",
-      {
-        "exclude": ["error", "warn", "info"]
-      }
+      { "exclude": ["error", "warn"] }
     ]
-  ],
-  "env": {
-    "production": {
-      "plugins": [
-        ["transform-react-remove-prop-types", { "removeImport": true }]
-      ]
-    },
-    "development": {
-      "plugins": [
-        "react-refresh/babel"
-      ]
-    }
-  }
+  ]
 }
