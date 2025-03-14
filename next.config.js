@@ -32,10 +32,12 @@ const nextConfig = {
   },
   experimental: {
     webpackBuildWorker: true,
-    serverActions: true,
     optimizeCss: true,
     forceSwcTransforms: true,
-    swcMinify: true
+    swcMinify: true,
+    speedInsights: {
+      enabled: true
+    }
   },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,

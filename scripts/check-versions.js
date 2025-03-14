@@ -1,5 +1,14 @@
 const { execSync } = require('child_process');
 
+// Check if we're in a Vercel environment
+const isVercel = process.env.VERCEL === '1';
+
+// Skip version checks in Vercel environment
+if (isVercel) {
+  console.log('Running in Vercel environment, skipping version checks');
+  process.exit(0);
+}
+
 function getNodeVersion() {
   return process.versions.node;
 }

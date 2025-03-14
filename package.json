@@ -13,7 +13,7 @@
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
     "clean": "rimraf .next node_modules/.cache",
     "prebuild": "npm run clean",
-    "prepare": "husky install || true",
+    "prepare": "CI=true husky install || echo 'Skipping husky in CI environment'",
     "postinstall": "node ./scripts/check-versions.js || true"
   },
   "dependencies": {
@@ -32,7 +32,9 @@
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.0",
     "tailwindcss": "^3.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@vercel/speed-insights": "^1.0.0",
+    "react-icons": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
