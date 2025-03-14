@@ -1,9 +1,10 @@
 'use client'
 
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
+  children: ReactNode
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

@@ -8,25 +8,30 @@ interface InteractiveButtonProps {
   className?: string
   children: React.ReactNode
   disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export function InteractiveButton({ 
   onClick, 
   className, 
   children,
-  disabled = false 
+  disabled = false,
+  type = 'button' 
 }: InteractiveButtonProps) {
-  const handleClick = React.useCallback(() => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
     if (!disabled) {
       onClick()
     }
-  }, [onClick, disabled])
+  }
 
   return (
     <Button 
+      type={type}
       onClick={handleClick} 
       className={className}
       disabled={disabled}
+      data-interactive="true"
     >
       {children}
     </Button>

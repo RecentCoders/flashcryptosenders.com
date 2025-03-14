@@ -8,14 +8,17 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "installCommand": "npm install react-qr-code next-themes @radix-ui/react-progress @radix-ui/react-select web-vitals @vercel/speed-insights react-icons critters && npm install"
+        "installCommand": "pnpm install",
+        "buildCommand": "pnpm run build",
+        "nodeVersion": "18.x"
       }
     }
   ],
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1",
     "NODE_ENV": "production",
-    "NEXT_SHARP_PATH": "/tmp/node_modules/sharp"
+    "NEXT_SHARP_PATH": "/tmp/node_modules/sharp",
+    "NEXT_PUBLIC_URL": "https://flashcryptosenders.com"
   },
   "headers": [
     {

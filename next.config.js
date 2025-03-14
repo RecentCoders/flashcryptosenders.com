@@ -31,13 +31,13 @@ const nextConfig = {
     formats: ['image/webp'],
   },
   experimental: {
-    optimizeCss: true,
-    webpackBuildWorker: true,
     swcMinify: true,
-    serverActions: {
-      allowedOrigins: ['localhost:3000', 'flashcryptosenders.com'],
-      bodySizeLimit: '2mb'
-    }
+    serverActions: true
+  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, path: false };
+    return config;
   },
   env: {
     NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV || 'development'
