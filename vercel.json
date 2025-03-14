@@ -1,7 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
   "framework": "nextjs",
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
   "builds": [
     {
       "src": "next.config.js",
@@ -9,7 +10,9 @@
     }
   ],
   "env": {
-    "NEXT_TELEMETRY_DISABLED": "1"
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "NODE_ENV": "production",
+    "NEXT_SHARP_PATH": "/tmp/node_modules/sharp"
   },
   "headers": [
     {
@@ -21,13 +24,5 @@
         }
       ]
     }
-  ],
-  "build": {
-    "env": {
-      "NEXT_TELEMETRY_DISABLED": "1",
-      "NEXT_SHARP_PATH": "/tmp/node_modules/sharp",
-      "npm_config_legacy_peer_deps": "true"
-    }
-  },
-  "installCommand": "pnpm install --no-frozen-lockfile"
+  ]
 }

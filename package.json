@@ -11,7 +11,7 @@
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
-    "clean": "rm -rf node_modules/.cache && rm -rf .next",
+    "clean": "rimraf .next node_modules/.cache",
     "prebuild": "npm run clean",
     "prepare": "husky install || true",
     "postinstall": "node ./scripts/check-versions.js || true"
@@ -45,11 +45,11 @@
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
     "sharp": "^0.33.0",
-    "@vercel/bundle-analyzer": "^1.0.0",
     "@next/bundle-analyzer": "^14.2.0",
     "cross-env": "^7.0.3",
     "husky": "^8.0.0",
-    "check-node-version": "^4.2.1"
+    "check-node-version": "^4.2.1",
+    "rimraf": "^5.0.0"
   },
   "resolutions": {
     "next": "^14.2.0",
