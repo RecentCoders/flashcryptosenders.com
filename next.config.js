@@ -31,13 +31,13 @@ const nextConfig = {
     formats: ['image/webp'],
   },
   experimental: {
-    webpackBuildWorker: true,
     optimizeCss: true,
-    forceSwcTransforms: true,
+    webpackBuildWorker: true,
     swcMinify: true,
-    staticPageGenerationTimeout: 180,
-    workerThreads: true,
-    cpus: Math.max(1, Math.min(8, require('os').cpus().length - 1))
+    serverActions: {
+      allowedOrigins: ['localhost:3000', 'flashcryptosenders.com'],
+      bodySizeLimit: '2mb'
+    }
   },
   env: {
     NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV || 'development'
@@ -47,6 +47,9 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
+  },
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
   }
 };
 

@@ -7,11 +7,27 @@ interface InteractiveButtonProps {
   onClick: () => void
   className?: string
   children: React.ReactNode
+  disabled?: boolean
 }
 
-export function InteractiveButton({ onClick, className, children }: InteractiveButtonProps) {
+export function InteractiveButton({ 
+  onClick, 
+  className, 
+  children,
+  disabled = false 
+}: InteractiveButtonProps) {
+  const handleClick = React.useCallback(() => {
+    if (!disabled) {
+      onClick()
+    }
+  }, [onClick, disabled])
+
   return (
-    <Button onClick={onClick} className={className}>
+    <Button 
+      onClick={handleClick} 
+      className={className}
+      disabled={disabled}
+    >
       {children}
     </Button>
   )

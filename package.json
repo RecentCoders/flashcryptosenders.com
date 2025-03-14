@@ -35,7 +35,12 @@
     "tailwindcss-animate": "^1.0.7",
     "@vercel/speed-insights": "^1.0.0",
     "react-icons": "^5.0.0",
-    "critters": "^0.0.20"
+    "critters": "^0.0.20",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-select": "^2.0.0",
+    "react-qr-code": "^2.0.12",
+    "next-themes": "^0.2.1",
+    "web-vitals": "^3.5.2"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
@@ -73,5 +78,9 @@
   "packageManager": "pnpm@8.9.0",
   "trustedDependencies": [
     "sharp"
-  ]
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

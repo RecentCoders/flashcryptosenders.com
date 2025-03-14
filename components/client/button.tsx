@@ -1,15 +1,19 @@
 'use client'
 
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, forwardRef } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
 }
 
-export function Button({ className, children, ...props }: ButtonProps) {
-  return (
-    <button className={className} {...props}>
-      {children}
-    </button>
-  )
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <button ref={ref} className={className} {...props}>
+        {children}
+      </button>
+    )
+  }
+)
+
+Button.displayName = 'Button'

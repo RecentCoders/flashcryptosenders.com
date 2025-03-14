@@ -2,7 +2,19 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const response = NextResponse.next()
+  // Handle revalidation requests
+  if (request.nextUrl.pathname.startsWith('/_next/static')) {
+    return NextResponse.next()
+  }
+
+  const requestHeaders = new Headers(request.headers)
+  requestHeaders.set('x-url', request.url)
+
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  })
   
   // Apply caching headers based on page type
   const url = request.nextUrl.pathname
@@ -52,12 +64,6 @@ export function middleware(request: NextRequest) {
 // Configure the middleware to run only for specific paths
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }
