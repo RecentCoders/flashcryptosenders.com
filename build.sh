@@ -1,9 +1,20 @@
 #!/bin/bash
 
+# Exit on error
+set -e
+
 # This script is used for Vercel deployments
 
-# Install dependencies with legacy peer deps
-npm install --legacy-peer-deps
+# Install dependencies using npm
+echo "Installing dependencies..."
+npm install --no-audit --prefer-offline
 
-# Build the application
+# Run the build
+echo "Building application..."
 npm run build
+
+# Run bundle analysis if required
+if [ "$ANALYZE" = "true" ]; then
+  echo "Running bundle analysis..."
+  npm run analyze
+fi

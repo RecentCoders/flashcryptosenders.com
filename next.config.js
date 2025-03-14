@@ -1,3 +1,7 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
+
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
@@ -30,6 +34,12 @@ const nextConfig = {
     serverActions: true,
     optimizeCss: true,
   },
+  poweredByHeader: false,
+  productionBrowserSourceMaps: false,
+  reactStrictMode: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production'
+  }
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);
