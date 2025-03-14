@@ -1,0 +1,249 @@
+/* Import critical CSS first */
+@import "./critical.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142 100% 40%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 47 100% 60%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 100% 40%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 70% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 47 95% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+/* Custom animations and styles */
+.text-gradient-gecko {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gecko-green to-gecko-yellow;
+}
+
+.bg-gecko-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234BCC00' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gecko-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.gecko-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Animated particles */
+.particle-1,
+.particle-2,
+.particle-3,
+.particle-4 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #4bcc00, #ffdd33);
+  animation: particle-animation 8s infinite linear;
+  opacity: 0.6;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  top: 70%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.particle-3 {
+  top: 30%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.particle-4 {
+  top: 60%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+@keyframes particle-animation {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(100px, -100px);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Add these animation classes for wallet connection UI */
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.wallet-pulse {
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wallet-slide-up {
+  animation: slide-up-fade 0.3s ease-out forwards;
+}
+
+/* Add a subtle hover effect for wallet buttons */
+.wallet-btn-hover {
+  transition: all 0.2s ease;
+}
+
+.wallet-btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-glow,
+  .gecko-loading::before,
+  .particle-1,
+  .particle-2,
+  .particle-3,
+  .particle-4 {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Add PurgeCSS hints to ensure critical selectors aren't removed */
+/* purgecss start ignore */
+.lcp-image,
+.js-loading,
+.image-placeholder,
+.content-placeholder,
+.animate-anything,
+.min-h-screen,
+.flex,
+.flex-col,
+.flex-1,
+.bg-background,
+.text-foreground,
+.font-sans,
+.antialiased,
+.site-header {
+  /* These classes are used in critical CSS, don't purge them */
+}
+/* purgecss end ignore */
+
+/* Optimize rendering performance with content-visibility for below-the-fold content */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px; /* Approximate size to prevent CLS */
+}
+
+/* Optimize animations to use GPU */
+.animate-gpu {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Responsive image handling to prevent layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Load non-critical CSS asynchronously */
+/* This will be used by the OptimizedAssets component */
+@media print {
+  .non-critical-css {
+    display: none !important;
+  }
+}

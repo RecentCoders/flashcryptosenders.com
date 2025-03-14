@@ -1,0 +1,21 @@
+{
+  "name": "FlashCryptoSenders",
+  "short_name": "FlashCrypto",
+  "description": "Secure and fast cryptocurrency transactions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1217",
+  "theme_color": "#4BCC00",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
