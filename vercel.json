@@ -145,7 +145,7 @@
       "ANALYZE": "false",
       "NEXT_TELEMETRY_DISABLED": "1",
       "NEXT_DISABLE_SOURCEMAPS": "true",
-      "NEXT_BUNDLER": "webpackpack",
+      "NEXT_BUNDLER": "webpack",
       "NEXT_SHARP_PATH": "./node_modules/sharp"
     }
   },
@@ -155,7 +155,6 @@
   },
   "cleanUrls": true,
   "trailingSlash": false,
-  "compress": true,
   "i18n": {
     "locales": ["en"],
     "defaultLocale": "en"
