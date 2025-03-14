@@ -18,41 +18,40 @@
     "vercel-build": "node -v && pnpm build"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-checkbox": "^1.0.4",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-label": "^2.0.2",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-toast": "^1.1.5",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.303.0",
-    "next": "^15.2.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^14.2.24",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.14",
     "tailwindcss-animate": "^1.0.7",
-    "@vercel/speed-insights": "^1.0.0",
-    "react-icons": "^5.0.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "react-icons": "^5.5.0",
     "critters": "^0.0.20",
-    "@radix-ui/react-progress": "^1.0.3",
-    "@radix-ui/react-select": "^2.0.0",
-    "react-qr-code": "^2.0.12",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-select": "^2.1.6",
+    "react-qr-code": "^2.0.15",
     "next-themes": "^0.2.1",
     "web-vitals": "^4.2.4",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/node": "^22.13.10",
-    "postcss": "^8.4.35",
-    "@tailwindcss/postcss7-compat": "^2.2.17"
+    "postcss": "^8.5.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "eslint": "^9.22.0",
     "eslint-config-next": "^15.2.2",
-    "postcss": "^8.4.32",
+    "postcss": "^8.5.3",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
     "sharp": "^0.33.0",
@@ -65,20 +64,20 @@
     "@tailwindcss/typography": "^0.5.10"
   },
   "resolutions": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^14.2.24",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "react": "18",
-        "react-dom": "18"
+        "react": "18.3",
+        "react-dom": "18.3"
       }
     }
   },
   "engines": {
-    "node": "^18.19.1 || ^20.18.1",
+    "node": ">=18.19.1",
     "pnpm": ">=8.9.0"
   },
   "packageManager": "pnpm@8.9.0",
@@ -86,7 +85,7 @@
     "sharp"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
