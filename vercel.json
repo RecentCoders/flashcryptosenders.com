@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "pnpm install && pnpm add framer-motion && pnpm build",
+  "buildCommand": "pnpm build",
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "build": {
     "env": {
-      "NEXT_TELEMETRY_DISABLED": "1"
+      "NEXT_TELEMETRY_DISABLED": "1",
+      "NODE_VERSION": "18.17.0"
     }
   }
 }
