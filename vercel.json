@@ -8,7 +8,7 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "installCommand": "npm install react-qr-code next-themes @radix-ui/react-progress @radix-ui/react-select web-vitals @vercel/speed-insights react-icons && npm install"
+        "installCommand": "npm install react-qr-code next-themes @radix-ui/react-progress @radix-ui/react-select web-vitals @vercel/speed-insights react-icons critters && npm install"
       }
     }
   ],

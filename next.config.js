@@ -34,10 +34,10 @@ const nextConfig = {
     webpackBuildWorker: true,
     optimizeCss: true,
     forceSwcTransforms: true,
-    swcMinify: true,
-    speedInsights: {
-      enabled: true
-    }
+    swcMinify: true
+  },
+  speedInsights: {
+    enabled: true
   },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
