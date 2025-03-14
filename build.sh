@@ -3,18 +3,26 @@
 # Exit on error
 set -e
 
-# This script is used for Vercel deployments
+# Clean up
+echo "Cleaning..."
+rm -rf node_modules/.cache
+rm -rf .next
 
-# Install dependencies using npm
+# Ensure correct Node version
+echo "Setting up Node environment..."
+. ~/.nvm/nvm.sh
+nvm use 18
+
+# Update lockfile and install dependencies
 echo "Installing dependencies..."
-npm install --no-audit --prefer-offline
+pnpm install --no-frozen-lockfile
 
 # Run the build
 echo "Building application..."
-npm run build
+pnpm run build
 
 # Run bundle analysis if required
 if [ "$ANALYZE" = "true" ]; then
   echo "Running bundle analysis..."
-  npm run analyze
+  pnpm run analyze
 fi

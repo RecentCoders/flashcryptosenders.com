@@ -1,7 +1,6 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
   "framework": "nextjs",
   "builds": [
     {
@@ -25,7 +24,10 @@
   ],
   "build": {
     "env": {
-      "NEXT_TELEMETRY_DISABLED": "1"
+      "NEXT_TELEMETRY_DISABLED": "1",
+      "NEXT_SHARP_PATH": "/tmp/node_modules/sharp",
+      "npm_config_legacy_peer_deps": "true"
     }
-  }
+  },
+  "installCommand": "pnpm install --no-frozen-lockfile"
 }
