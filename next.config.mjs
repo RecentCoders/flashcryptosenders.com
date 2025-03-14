@@ -15,13 +15,24 @@ const nextConfig = {
   },
   images: {
     unoptimized: false,
-    domains: ['assets.flashcryptosenders.com', 'randomuser.me', 'cryptologos.cc'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.flashcryptosenders.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'randomuser.me',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cryptologos.cc',
+      }
+    ],
     formats: ['image/webp'],
   },
   experimental: {
     webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
     serverActions: true,
     optimizeCss: true,
   },
