@@ -34,10 +34,13 @@ const nextConfig = {
     webpackBuildWorker: true,
     optimizeCss: true,
     forceSwcTransforms: true,
-    swcMinify: true
+    swcMinify: true,
+    staticPageGenerationTimeout: 180,
+    workerThreads: true,
+    cpus: Math.max(1, Math.min(8, require('os').cpus().length - 1))
   },
-  speedInsights: {
-    enabled: true
+  env: {
+    NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV || 'development'
   },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,

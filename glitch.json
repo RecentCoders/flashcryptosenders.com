@@ -1,0 +1,18 @@
+{
+  "install": "pnpm install",
+  "start": "pnpm start",
+  "watch": {
+    "install": {
+      "include": [
+        "^package\\.json$",
+        "^\\.env$"
+      ]
+    },
+    "restart": {
+      "include": [
+        "^next\\.config\\.js$"
+      ]
+    },
+    "throttle": 1000
+  }
+}

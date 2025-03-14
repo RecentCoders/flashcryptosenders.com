@@ -1,0 +1,13 @@
+[build]
+  builder = "nixpacks"
+  buildCommand = "pnpm run build"
+
+[deploy]
+  startCommand = "pnpm start"
+  healthcheckPath = "/"
+  healthcheckTimeout = 100
+  restartPolicyType = "on_failure"
+
+[deploy.env]
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"

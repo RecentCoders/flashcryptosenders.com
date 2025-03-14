@@ -1,10 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "pnpm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NPM_FLAGS = "--no-optional"
   NEXT_TELEMETRY_DISABLED = "1"
 
 # Asset optimization
