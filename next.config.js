@@ -30,11 +30,11 @@ module.exports = (phase, { defaultConfig }) => {
     // Compression
     compress: true,
     
-    // i18n configuration
-    i18n: isDev ? {
+    // i18n configuration - now always configured here rather than in vercel.json
+    i18n: {
       locales: ['en'],
       defaultLocale: 'en',
-    } : undefined, // Use Vercel i18n config in production
+    },
     
     // URL handling
     trailingSlash: false,
@@ -103,8 +103,6 @@ module.exports = (phase, { defaultConfig }) => {
       
       return config;
     },
-    
-    // Headers configuration - moved to vercel.json
     
     // Redirects
     redirects: async () => [

@@ -1,39 +1,12 @@
 {
-  "presets": [
-    [
-      "next/babel",
-      {
-        "preset-env": {
-          "targets": {
-            "browsers": [">0.3%", "not ie 11", "not dead", "not op_mini all"]
-          },
-          "useBuiltIns": "usage",
-          "corejs": 3,
-          "loose": true,
-          "bugfixes": true
-        },
-        "transform-runtime": {
-          "corejs": 3
-        }
-      }
-    ]
-  ],
+  "presets": ["next/babel"],
   "plugins": [
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "runtime": "automatic"
-      }
-    ],
     [
       "babel-plugin-transform-remove-console",
       {
         "exclude": ["error", "warn", "info"]
       }
-    ],
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    ["@babel/plugin-proposal-private-methods", { "loose": true }],
-    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+    ]
   ],
   "env": {
     "production": {
@@ -44,20 +17,6 @@
     "development": {
       "plugins": [
         "react-refresh/babel"
-      ]
-    },
-    "test": {
-      "presets": [
-        [
-          "next/babel",
-          {
-            "preset-env": {
-              "targets": {
-                "node": "current"
-              }
-            }
-          }
-        ]
       ]
     }
   }
