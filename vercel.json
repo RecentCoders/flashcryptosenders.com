@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pnpm install && pnpm build",
+  "buildCommand": "pnpm install && pnpm add framer-motion && pnpm build",
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "build": {
