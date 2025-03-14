@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "node scripts/check-env.js && next build",
-    "start": "next start",
+    "dev": "bun --bun next dev",
+    "build": "bun --bun node scripts/check-env.js && next build",
+    "start": "bun --bun next start",
     "lint": "next lint",
     "format": "prettier --write ."
   },
@@ -39,6 +39,8 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": "18.17.0"
-  }
+    "node": "18.17.0",
+    "bun": ">=1.0.0"
+  },
+  "packageManager": "bun@1.0.0"
 }
