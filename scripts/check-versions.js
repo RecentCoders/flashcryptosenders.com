@@ -5,12 +5,12 @@ if (process.env.VERCEL) {
   process.exit(0);
 }
 
-const requiredNode = '18.19.1';
-const currentNode = process.version;
+const requiredNodeVersion = '20.18.1';
+const currentNodeVersion = process.version.slice(1); // Remove the 'v' prefix
 
-if (!semver.satisfies(currentNode, requiredNode)) {
-  console.error(`Node.js ${requiredNode} is required, found ${currentNode}`);
+if (currentNodeVersion !== requiredNodeVersion) {
+  console.error(`Node.js ${requiredNodeVersion} is required, found ${currentNodeVersion}`);
   process.exit(1);
 }
 
-console.log(`Node.js version check passed: ${currentNode}`);
+console.log(`Node.js version check passed: ${currentNodeVersion}`);
