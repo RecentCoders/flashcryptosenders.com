@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "bun --bun next dev",
-    "build": "bun --bun node scripts/check-env.js && next build",
-    "start": "bun --bun next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
   },
@@ -36,11 +36,15 @@
     "eslint-config-next": "^14.0.4",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "sharp": "^0.33.0",
+    "@vercel/bundle-analyzer": "^1.0.0"
   },
   "engines": {
-    "node": "18.17.0",
-    "bun": ">=1.0.0"
+    "node": "18.x"
   },
-  "packageManager": "bun@1.0.0"
+  "packageManager": "pnpm@8.9.0",
+  "trustedDependencies": [
+    "sharp"
+  ]
 }
