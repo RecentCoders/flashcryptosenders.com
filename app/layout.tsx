@@ -142,6 +142,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
+        {/* 
+          Theme-color meta tags not supported in Firefox, but used for other browsers
+          Firefox uses the background-color from manifest.json instead
+        */}
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,7 +202,7 @@ export default function RootLayout({
         <SpeedInsights />
         <WebVitalsMonitor 
           enabled={true}
-          debug={process.env.NODE_ENV === 'development'}
+          debug={typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development'}
           reportTo={['analytics', 'console']}
           samplingRate={0.5} // Only track 50% of users to reduce analytics volume
         />

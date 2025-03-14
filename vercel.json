@@ -1,19 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
+  "buildCommand": "npm run vercel-build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "nextjs",
+  "build": {
+    "env": {
+      "NPM_FLAGS": "--legacy-peer-deps"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "EDGEDB_INSTANCE": "flashcryptosenders",
-    "EDGEDB_SECRET_KEY": "{{EDGEDB_SECRET_KEY}}"
   }
 }

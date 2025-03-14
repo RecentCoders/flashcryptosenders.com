@@ -15,7 +15,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1300px", // Updated to match design system
+        "2xl": "1400px",
       },
     },
     extend: {
@@ -93,13 +93,16 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#4BCC00", // Gecko Green
-          foreground: "#FFFFFF",
-          hover: "#409533", // Apple Green for hover
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "#FF3A33", // Danger Red
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",

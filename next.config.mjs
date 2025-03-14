@@ -15,7 +15,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: false,
-    domains: ['assets.flashcryptosenders.com'],
+    domains: ['assets.flashcryptosenders.com', 'randomuser.me', 'cryptologos.cc'],
     formats: ['image/webp'],
   },
   experimental: {
@@ -47,18 +47,13 @@ const nextConfig = {
   poweredByHeader: false
 }
 
-mergeConfig(nextConfig, userConfig)
-
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
-    return
+    return nextConfig
   }
 
   for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
+    if (typeof nextConfig[key] === 'object' && !Array.isArray(nextConfig[key])) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...userConfig[key],
@@ -67,6 +62,7 @@ function mergeConfig(nextConfig, userConfig) {
       nextConfig[key] = userConfig[key]
     }
   }
+  return nextConfig
 }
 
-export default nextConfig
+export default mergeConfig(nextConfig, {})
