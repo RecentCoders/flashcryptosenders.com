@@ -1,0 +1,13 @@
+.git
+.github
+node_modules
+.next
+.husky
+.vscode
+README.md
+.babelrc.backup
+.env.example
+.gitignore
+.npmrc
+.nvmrc
+
