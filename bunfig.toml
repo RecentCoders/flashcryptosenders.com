@@ -2,16 +2,18 @@
 production=true
 peer=true
 frozen=true
+exact=true
 registry="https://registry.npmjs.org"
 
 [install.cache]
 dir=".bun/cache"
 disable=false
-enable-global=false
+enable-global=true
 
 [test]
 coverage=true
 timeout=10000
+preload="./setup.ts"
 
 [debug]
 dump-js=false

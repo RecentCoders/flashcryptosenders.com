@@ -14,8 +14,8 @@
     "clean": "rimraf .next node_modules/.cache",
     "prebuild": "node -v",
     "prepare": "CI=true husky install || echo 'Skipping husky in CI environment'",
-    "postinstall": "node ./scripts/check-versions.js || true",
-    "vercel-build": "node -v && pnpm build"
+    "postinstall": "bun ./scripts/check-versions.js || true",
+    "vercel-build": "node -v && bun run build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
@@ -43,15 +43,12 @@
     "next-themes": "^0.2.1",
     "web-vitals": "^4.2.4",
     "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@types/node": "^22.13.10",
-    "postcss": "^8.4.31"
+    "@types/react-dom": "^19.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.2.24",
-    "postcss": "^8.4.31",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
     "sharp": "^0.33.0",
@@ -62,26 +59,19 @@
     "rimraf": "^6.0.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "postcss-preset-env": "^9.3.0"
+    "postcss-preset-env": "^9.3.0",
+    "semver": "^7.5.4"
   },
   "resolutions": {
     "next": "^14.2.24",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "react": "18.3",
-        "react-dom": "18.3"
-      }
-    }
-  },
   "engines": {
     "node": "20.18.1",
-    "pnpm": ">=9.15.0"
+    "bun": "1.0.0"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "bun@1.0.0",
   "trustedDependencies": [
     "sharp"
   ],
